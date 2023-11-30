@@ -1,0 +1,92 @@
+:root{
+    --theme-color: #283149;
+    --primary-color: #404B69;
+    --button-color: #00818A;
+    --light-color: #DBEDF3;
+}
+
+/************************* Reset CSS Start *************************/
+*{
+    margin:0px;
+    padding:0px;
+    font: inherit;
+    font-size:100%;
+    font-weight:300;
+    vertical-align:baseline;
+    box-sizing:border-box;
+    -webkit-box-sizing:border-box;
+}
+ol, ul {list-style: none;}
+img, picture, svg, video{display: block;max-width: 100%;}
+table{border-collapse:collapse;border-spacing:0}
+textarea {white-space: revert;}
+article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}
+table{border-collapse:collapse;border-spacing:0}
+/************************* Reset CSS End *************************/
+/************************* Resuse CSS Start *************************/
+.sprite{
+    background-image: url('../image/sprite.png');
+    background-size: 500px 500px;
+    background-repeat: no-repeat;
+    display: inline-block;
+}
+.default-flex{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+/************************* Resuse CSS End *************************/
+/************************* icons Start *************************/
+
+/************************* icons End *************************/
+.main-img{
+    position: absolute;
+    max-width: 1440px;
+    left: calc(50% - 720px);
+    top:0px;
+}
+html{
+    color-scheme: dark light;
+    body{
+        min-height: 100vh;
+        .default-container{
+            max-width: 1200px;
+            width:100%;
+            margin:0 auto;
+            .default-flex();
+        }
+        header{
+            .default-container{
+                .logo{
+                    .sprite();
+
+                }
+            }
+        }
+        main{
+            .default-container{
+
+            }
+        }
+        footer{
+
+        }
+    }
+}
+/*************************** Animation Class Start ***************************/
+.animate{
+    transition:all .8s ease-in-out;
+    opacity:0;
+    &.fadeInUp{-moz-transform:translateY(30px);-ms-transform:translateY(30px);-webkit-transform:translateY(30px);transform:translateY(30px)}
+    &.fadeInDown{-moz-transform:translateY(-30px);-ms-transform:translateY(-30px);-webkit-transform:translateY(-30px);transform:translateY(-30px)}
+    &.fadeInLeft{-moz-transform:translateX(-30px);-ms-transform:translateX(-30px);-webkit-transform:translateX(-30px);transform:translateX(-30px)}
+    &.fadeInRight{-moz-transform:translateX(30px);-ms-transform:translateX(30px);-webkit-transform:translateX(30px);transform:translateX(30px)}
+    &.animated{
+        opacity:1;
+        &.fadeInUp{-moz-transform:translateY(0);-ms-transform:translateY(0);-webkit-transform:translateY(0);transform:translateY(0)}
+        &.fadeInDown{-moz-transform:translateY(0);-ms-transform:translateY(0);-webkit-transform:translateY(0);transform:translateY(0)}
+        &.fadeInLeft{-moz-transform:translateX(0);-ms-transform:translateX(0);-webkit-transform:translateX(0);transform:translateX(0)}
+        &.fadeInRight{-moz-transform:translateX(0);-ms-transform:translateX(0);-webkit-transform:translateX(0);transform:translateX(0)}
+    }
+}
+/*************************** Animation Class Start ***************************/
